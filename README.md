@@ -4,7 +4,7 @@ dryboot = drykup + bootstrap 2.0
 
 rapidly generate bootstrap compatible markup without writing html.
 
-**very much work in progress**
+**very much work in progress!**
 
 ## examples
 
@@ -26,10 +26,16 @@ head = ->
 navigation = ->
     navbar.navbar k, ->
         navbar.brand k, 'Hello World', '/'
+
         navbar.nav.left k, ->
             navbar.link k, 'Foo (Active)', '/foo', true
             navbar.link k, 'Bar', '/bar'
+
         navbar.nav.right k, ->
+            navbar.dropdown k, 'Admin', ->
+                navbar.link k, 'Foo', '/admin/foo'
+                navbar.link k, 'Bar', '/admin/bar'
+            navbar.divider k
             navbar.link k, 'Baz', '/baz'
 
 content = ->
