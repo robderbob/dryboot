@@ -2,6 +2,10 @@ module.exports =
 
     brand: (k, text, href) -> k.a {class: 'brand', href: href}, text
 
+    logo: (k, href, src, width = '', style = '') ->
+        k.a href: href, ->
+            k.img {class: 'brand', src: src, width: width, style: style}
+
     navbar: (k, inner) ->
 
         k.div {class: 'navbar navbar-fixed'}, ->
